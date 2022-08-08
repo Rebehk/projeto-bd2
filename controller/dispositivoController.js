@@ -12,7 +12,7 @@ const listarDispositivos = async (request, response) => {
 const buscarDispositivo = async (request, response) => {
   try {
     const encontrado = await Dispositivo.findOne(
-      { email: request.params.modelo },
+      { modelo: request.params.modelo },
       { __v: false }
     );
     if (encontrado.length > 0) {
