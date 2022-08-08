@@ -2,7 +2,7 @@ const mongoose = require("../database/db");
 const dispositivoSchema = new mongoose.Schema({
     fotoLink: {type:String, required: true},
     fabricante: { type: String, required: true},
-    modelo: { type: String, required: true },
+    modelo: { type: String, required: true, unique : true},
     preco: { type: String, required: true },
     processador: {type: String, required: true},
     memoriaInterna: {type: String, required: true},
