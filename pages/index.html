@@ -22,36 +22,97 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
+                    <button class="btn-add" data-bs-toggle="modal" data-bs-target="#modalForm">
+                        Adicionar
+                    </button>
 
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Pesquisar </button>
+                    <button class="btn btn-outline-secondary" type="submit">Pesquisar </button>
                 </form>
             </div>
         </div>
     </nav>
+    <div class="body-color">
+        <div class="container"></div>
 
-    <!-- <img src="https://i.zst.com.br/thumbs/12/13/3e/-733839784.jpg"> -->
-    <div class="container"></div>
-    <!-- cards -->
+    </div>
+
+
+
+
+    <!-- Modal add/edit -->
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Inform os Dados do Dispositivo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="fotolink"
+                            placeholder="https://www.exemplo.com/imagem.jpg">
+                        <label for="floatingInput">Link da Imagem</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="fabricante" placeholder="Fabricante">
+                        <label for="floatingInput">Fabricante</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="modelo" placeholder="Modelo">
+                        <label for="floatingInput">Modelo</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="preco" placeholder="Preço">
+                        <label for="floatingInput">Preço</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="processador" placeholder="Processador">
+                        <label for="floatingInput">Processador</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="memoriaInterna" placeholder="Memória Interna">
+                        <label for="floatingInput">Memória Interna</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="memoriaRam" placeholder="Memória Ram">
+                        <label for="floatingInput">Memória Ram</label>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title" id="ModalLabel">você deseja excluir o dispositivo ?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Voltar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
