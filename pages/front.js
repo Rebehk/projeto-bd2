@@ -12,6 +12,17 @@ function carregaDispositivos() {
         .catch(err => false)
 }
 
+async function handleBuscaPorModelo(modelo){
+    try{
+        const response = await fetch(`${baseURL}/busca/${modelo}`)
+        const dispositivo = await response.json()
+    
+        return dispositivo ? dispositivo : false
+    }catch(err){
+        return false
+    }
+}
+
 function handleAdd(dispositivo) {
     fetch(`${baseURL}/add`, {
         method: 'POST',
@@ -150,6 +161,52 @@ function handleModalDelete() {
     }
 
     modal.removeAttribute('modelo')
+}
+
+async function handleModalSearch() {
+    const searchInput = document.querySelector('#search-input')
+    const searchModalBody = document.querySelector('.search-modal-body')
+
+    const dispositivo = await handleBuscaPorModelo(searchInput.value)
+    searchModalBody.innerHTML = ''
+    if (dispositivo) {
+        const {
+            fotoLink,
+            modelo,
+            fabricante,
+            preco,
+            processador,
+            memoriaInterna,
+            memoriaRam
+        } = dispositivo
+        
+        const html = `
+            <div class="card cards" style="width: 18rem; margin:0 auto;">
+                <img src=${fotoLink} class=" img-tam" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">${modelo}</h5>
+                    <p class="card-text">fabricante: ${fabricante}</p>
+                    <p class="card-text">preço: ${preco}</p>
+                    <p class="card-text">processador: ${processador}</p>
+                    <p class="card-text">memoria interna: ${memoriaInterna}</p>
+                    <p class="card-text">memoria ram: ${memoriaRam}</p>
+                </div>
+            </div>
+        `
+        searchModalBody.innerHTML = html
+        searchInput.value = ''
+    } else {
+        const html = `
+            <div class="card cards" style="width: 18rem; margin:0 auto;">
+                <img src='./assets/nao-encontrado.jpg' class=" img-tam" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Nenhum dispositivo encontrado</h5>
+                </div>
+            </div>
+        `
+        searchModalBody.innerHTML = html
+        searchInput.value = ''
+    }
 }
 
 function handleSetModal(modelo, idElem) {

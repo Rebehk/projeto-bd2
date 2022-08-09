@@ -15,7 +15,7 @@ const buscarDispositivo = async (request, response) => {
       { modelo: request.params.modelo },
       { __v: false }
     );
-    if (encontrado.length > 0) {
+    if (encontrado) {
       response.status(200).send(encontrado);
     } else {
       response.status(400).send("Dispositivo não encontrado!");
