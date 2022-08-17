@@ -1,14 +1,7 @@
-# projeto-bd2
+# InfoFone
 
 Aplicação desenvolvida para a disciplina de banco de dados 2 do curso de ADS no IFPB, um CRUD com MongoDB, realiza a inserção, edição e exclusão de especificação de dispositvos moveis.
 
-<!-- <div align="center" style="margin: 0 auto; display: flex;  justify-content: space-around; flex-wrap: wrap; width: 700px;">
-        <img height="250 px" src="./assets/screen_01.jpg">
-        <img height="250 px" src="./assets/screen_02.jpg">
-        <img height="250 px" src="./assets/screen_03.jpg">
-        <img height="250 px" src="./assets/screen_04.jpg">
-        <img height="250 px" src="./assets/screen_05.jpg">
-</div> -->
 
 ## Pré-requisitos
 
